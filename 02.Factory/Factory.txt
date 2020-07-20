@@ -1,0 +1,34 @@
+Factory é o padrão mais utilizado em desenvolvimento de software.
+Em POO o termo "Factory" é referente à uma classe/ implementação especializada em criar objetos de outros tipos.
+Geralmente essa classe possui métodos que quando chamados retornam objetos.
+
+Para que precisamos de uma fábrica quando o desenvolvedor pode criar normalmente um objeto?
+R: Uma fábrica oferece algumas vantagens.
+1. Acoplamento. A criação do objeto independe da implementação da classe
+2. O desenvolvedor não precisa conhecer os parâmetro da classe, apenas a sua interface (métodos disponibilizados)
+3. Pode-se inserir outras classes na fábrica sem que o desenvolvedor precise mudar o código (ou no máximo um param)
+4. A fábrica pode reutilizar objetos existentes. SE o dev sempre criar o obj, novos objs sempre serão criados
+
+Existem 3 variações do Factory:
+
+1. Simple Factory
+Permite que as interfaces criem objetos sem expor a lógica por trás da implementação
+2. Factory Method
+As interfaces podem criar objetos, mas adia a decisão do tipo de objeto e deixa que as subclasses decidam
+3. Abstract Factory
+Cria objetos sem expor suas classes. Expõe objetos de outra fábrica e internamente cria outross objetos
+
+1. Simple Factory
+Não é bem um padrão e sim boas práticas a serem conhecidas antes do Method e Abstract.
+
+2. Factory Method
+Ao invés da própria fábrica ser responsável pela criação dos objetos, ela deixa que as subclasses decidam.
+A criação não é feita por instanciação, mas sim por herança.
+Proporciona flexibilidade e código genérico
+O código que cria o objeto está separado e independe do código que o utiliza
+
+3. Abstract Factory
+O objetivo é criar uma interface para criar objetos sem especificar qual exatamente é o tipo.
+O Method adia a decisão da criação instância para as subclasses. Já o Abstract cria
+famílias de objetos relacionados
+

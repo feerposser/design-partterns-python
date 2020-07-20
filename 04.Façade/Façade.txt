@@ -1,0 +1,50 @@
+Façade é um tipo de padrão ESTRUTURAL. Esse tipo de padrão descreve como classes e objetos podem ser
+agrupados para implementar mais comportamentos.
+
+POdemos enxergar esse padrão como uma forma de abstrair relacionamentos entre objetos para que
+a estrutura de controle fique mais simples.
+
+Enquanto as classes podem utilizar herança para absorver comportamentos de outras classes, os padrões
+estruturais utilizam objetos para compor mais comportamentos.
+
+Alguns outros tipos de padrões estruturais são:
+1. Adapter - Adapta uma interface a outra
+2. Bridge - Desacopla a interface de um objeto
+3. Decorator - Atribui responsabilidades adicionais a um objeto em tempo de execução ou dinamicamente.
+
+O Facede/Façade (fachada).
+A ideia do "fachada" é que quando você olhada para a fachada, de uma loja, por exemplo, você tem uma
+ideia do que o aguarda. A identidade visual, profisionalismo, cuidado... Mas não sabe o que tem lá dentro,
+os processos internos e por aí vai.
+A ideia do Facede é essa. Abstrair os processos do cliente para que ele tenha tudo de forma simplificada.
+
+A ideia é simples:
+Cliente acessa um:
+Façade que gerencia um grupo de:
+Subsistemas
+
+O Façade recebe uma requisição e gerencia subsistemas que vão responder a essa requisição.
+A partir disso ele aciona os subsistemas e retorna a informação ao cliente.
+Se o cliente quiser uma tarefa feita ele não precisa conhecer todo o subsistema, ele aciona o façade
+que conhece todos.
+
+O subsistema pode ser representado por uma classe que realiza diversas operações
+Ele responde ao façade, mas não conhece os outros sistemas nem a composição do façade
+
+O cliente é uma classe que instancia o façade.
+
+No geral o facade é uma classe que oferece um uso facilitado de subsistemas(outras classes).
+Esse design pattern utiliza o "princípio do conhecimento mínimo" que busca reduzir a interação
+entre os objetos.
+
+1. Busca-se fazer com que as classes "não façade" interajam o mínimo possível com outras classes
+2. REdução do acoplamento entre objetos e classes
+3. SE houver muito acoplamento entre as classes, vai ser foda. QUalquer mudança no código vai ser um pesadelo.
+
+Pode-se ter inúmeros façades no projeto
+
+DEsvantages:
+classes tecnicamente desnecessárias serão criadas para simplificar os processos de requisições, isso
+poderá resultar em perda de desempenho e em certos níveis poderá aumentar a complexidade do software.
+
+O façade pode adicionar sua própria lógica para interagir com os subsistemas.

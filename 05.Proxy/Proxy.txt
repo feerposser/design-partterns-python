@@ -1,0 +1,57 @@
+Proxy (PRocurador)
+
+É um design patterns do tipo estrutural.
+
+No geral um proxy é um sistema que serve de ponte entre uma fonte que está procurando algo e um provedor
+que é quem provê este algo.
+Naweb seria como um navegador -> faz requisição -> para o servidor
+servidor processa e -> responde com o recurso.
+
+Ele serve como um objeto que enccapsula o objeto (que está sendo requisitado), adiciona novas
+funcionalidades sem alterar o código original, como controlar o acesso, e responde com a resposta do objeto.
+
+- Ele representa um sistema complexo de forma mais simples
+- Oferece segurança aos objetos. Em alguns casos o solicitante não tem permissão de acessar
+os recursos do obejto. O proxy é uma espécie de escudo para esses objetos.
+- Ele pode ser um objeto local que faz acessos à um objeto remoto. Como em sistemas distribuídos.
+Ao invés de acessar o objeto diretamente, o proxy acessa esse objeto e solicita as informações.
+- Pode oferecer uma alteranativa mais leve para consumir menos recursos de um sistema. Por exemplo
+em uma rede social onde você carrega os dados dos usuários com fotos pequenas. Caso alguém queira
+a foto completa irá clicar nela e outra requisição mais específica por aquele recurso será feito.
+
+Faz essencialmente:
+
+1. Fornece um ponto de acesso para que seja possível utilizar o objeto original
+2. É usado como uma camada de interface para que se possa usar um objeto remoto
+3. Protege o objeto original de acessos indesejados
+
+Tipos de proxy:
+
+PROXY VIRTUAL
+É usado para conter requisições com respostas muito grandes (custosas). Um bom exemplo
+é a requisição de uma listagem de usuários em que hajam fotos. Se as fotos forem muito grandes,
+pode-se usar o Proxy Virtual para pegar fotos "menores" e inserir na listagem. Se o usuário
+clicar em uma foto para carregá-la, aí cria-se uma solicitação que irá responder com a foto real.
+
+PROXY REMOTO
+?
+
+PROXY DE PROTEÇÃO
+É um tipo de proxy usado para assegurar acessos autorizados e autenticados. Um exemplo comum é o uso
+de sistemas distrubuídos ou microsserviços. Existirá um servidor central que autentica e autoriza
+todas as requisições. Um aplicação terá um proxy de proteção que antes de responder com o recurso
+irá verificar se a requisição está autenticada e autorizada.
+
+
+Proxy vs. Façade
+Ambos são padrões estruturais e possuem um objeto "na frente" do objeto real. Fazendo uma ponte
+entre a solicitação e a resposta. A diferença está no objetivo e intenção de cada um:
+
+Proxy: Oferece um substituto para que o objeto não seja controlado diretamente
+Façade: oferece uma interface para subsistemas grandes de classes
+
+Proxy: tem a mesma interface que o objeto original que deveria ser usado
+Façade: minimiza a interação entre o cliente e o "servidor"
+
+Proxy: atua como intermediário
+Façade: oferece uma interface única e simplificada

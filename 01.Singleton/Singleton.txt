@@ -1,0 +1,44 @@
+O SIngleton proporciona uma forma de ter um e somente um objeto de um determinado tipo,
+além de disponibilizar um ponto de acesso global.
+
+Geralmente é usado em casos de logging e operações em bancos de dados onde é necessário apenas uma
+instância disponível para não gerar conflitos de recursos.
+
+ELe:
+Garante que apenas um objeto da classe seja criado
+Oferece um ponto de acesso para um objeto que seja global ao programa
+Controla o acesso concorrente de recursos compartilhados
+
+Uma forma de usar o Singleton, por exemplo, em Java, é criar um construtor privado e um
+método estático que faça a inicialização
+
+Em Python não temos como criar um contrutor privado.
+
+- Singleton Clássico -
+É utilizado o método new para identificar se a classe possui o atributo x.
+SE o atributo existir, significa que um objeto dessa classe já existe, então retorna-se o próprio objeto.
+Se não existir, então o objeto é criado e retorna-se o próprio objeto.
+
+- Singleton Preguiçoso -
+(Lazy instantiation)
+Nesse caso cria-se a instância apenas quando é realmente necessária, através de um método específico.
+Dessa forma podemos controlar a forma com que o obj é criado.
+
+- Singleton Monostate -
+Os design patterns foram introduzidos pelo livro 'A Gangue dos Quatro (Gang of Four)'.
+Neste livro é dito que deve haver um e somente um objeto de cada classe.
+Entretanto, geralmente um programador necessita de comportamentos e estados de uma classe,
+e não da identidade em si.
+Quando temos vários objetos que compartilham o mesmo estado, isso é conhecido como Monostate.
+Em Python cada classe tem uma variável chamada __dict__ que armazena o estado de todos os atributos.
+-> O monostate cria vários objetos que compartilham os mesmos estados
+-> O singleton padrão usa apenas um objeto
+
+- Singleton metaclasse -
+Uma metaclasse é uma instância de outra classe. Basicamente é uma instância da sua metaclasse.
+Podemos criar uma classe que funcionará como uma metaclasse de singletons. Ela armazenará objetos
+em um dicionário e as classes que precisam implementar o padrão singleton podem usá-la como metaclasse.
+A partir daí, quando a classe for instanciada, a classe singleton verifica se um objeto com o nome da
+classe já existe. Se existir, retornará ele.
+Isso acontece através do método __call__ que é um método especial do Python que é chamado toda vez que
+uma classe é instanciada.

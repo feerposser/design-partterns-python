@@ -1,0 +1,41 @@
+Command (comando) é um design patterns do tipo comportamental.
+
+Os padrões comportamentais têm foco no gerenciamento de responsabilidades de objetos, lidando com a interação
+entr eles.
+
+O padrão Command é usado quando queremos armazenar informações que serão usadas para executar um evento em momento
+indeterminado. Exemplo disso e pode ser um assistente de instalação de software (wizard). O usuário navega entre
+páginas (next, back) selecionando opções até no final onde o assistente iniciará o processo de instalação.
+
+O Command trabalha com 4 termos:
+1. Command: Conhece os objetos do tipo Receiver e invoca métodos desses objetos.
+2. Receiver: Os valores do parâmetros do método Receiver são armazenados no Command
+3. Invoker: O Invoker sabe como executar um determinado comando
+4. Client: Cria o objeto Command e define seu Receiver
+
+Os principais objetivos do padrão Command são:
+- Encapsular uma requisição como um objeto
+- Parametrizar os clientes com diferentes requisições
+- Salvar as requisições em uma fila
+- Oferecer um callback
+
+Pode ser usado nos seguintes cenários:
+- Parametrizar objetos de acordo com a ação a ser executada
+- Adicionar ações em uma fila e executar as requisições em pontos diferentes
+- Criar uma estrutura para operações de alto nível baseadas em operações menores
+
+É bom para:
+- Rollback. Os devs ou criam um snapshot do sistema e quando é necessário voltar uma versão revertem para esse snapshot,
+ou, com o Command, armazenam as operações e depois as desfazem
+- Tarefas assíncronas. Comum em sistemas distribuídos para que o core não fique aguardando o término de uma requisição.
+O Invoker mantem uma fila de requisições para o objeto Receiver
+
+Vantagens:
+- Desacopla a classe que invoca a operação do objeto que sabe como executar
+- Cria uma sequencia de comandos
+- Extensões para adicionar novos comendos são simples de implementar
+- Sistema de rollback
+
+Desvantagens:
+- Alto números de classes e objetos trabalhando em conjunto
+- Cada comando individual é uma classe ConcreteCommand

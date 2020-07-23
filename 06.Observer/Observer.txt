@@ -1,0 +1,50 @@
+Observer é um design patter do padrão comportamental, que foca nas responsabilidades dos objetos.
+Lidam com a interação dos objetos para criar funcionalidades mais complexas.
+Apesar de sabermos que os objetos devem interagir uns com os outros, o Observer foca no baixo acoplamento.
+
+O objeto regido por um Observer mantém uma lista de objetos (observadores) de forma que possa notificá-los
+caso haja mudanças.
+
+Principais objetivos:
+1. DEfine uma dependência de um para muitos
+2. Mantem os objetos dependentes notificados sobre alterações
+3. ENcapsula um componente nuclear (sujeito)
+
+É normalmente usado nestes cenários:
+- Serviços de eventos para sistemas distribuídos
+- Frameworks
+- Cenários onde alterações precisam ser monitoradas
+
+FORMAS DE NOTIFICAR AS MUDANÇAS DE UM SUBJECT A UM OBSERVER: push e pull
+
+Pull:
+O subject avisa todos os observers que houve uma mudança
+O observer é responsável por obter essa mudança
+É o menos eficiente pois envolve dois passos: notificar e buscar a notificação
+
+Push:
+O subject avisa e envia as mudanças ao observer
+NEste modelo deve-se cuidar o overengineering, pois o subject pode acabar enviando informações
+muito detalhadas ao observer.
+
+
+O padrão Observer implementa um baixo acoplamento, o que facilita a manutenção e a probabilidade de que
+caso hajam mudanças no código não surgirão erros imprevistos em decorrência do alto nível de acoplamento.
+
+- O subject apenas sabe que o observer implementa uma determinada interface
+- Qualquer novo observer pode ser adicionado facilmente
+- O subject não precisa ser modificado para adicionar/remover observers
+- Os subjects e o observer não estão fortemente acoplados e não possuem dependências entre si. Pode-se
+reutiliz=a-los em qualquer outro local do projeto
+- Alterações de código não irão afetar um ao outro
+
+VANTAGENS
+- Oferece baixo acoplamento
+- Permite notificar outros objetos sem precisar alterar o código
+- Observers podem ser adicionados/removidos a qualquer momento
+
+DESVANTAGENS
+- O observer necessita de uma interface
+- Se não for implementado corretamente pode gerar problemas
+- As vezes pode gerar concorrência se as notificações não forem de alta confiança
+

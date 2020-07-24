@@ -1,0 +1,59 @@
+Padrão Template Method - Padrão comportamental
+
+Ele define o esqueleto de um programa ou de um algoritmo em um método chamado template method.
+Podemos usar o TM para determinar os passos que serão seguidos para que um algoritmo seja executado.
+
+Na terminologia de desenvolvimento de software, quando fala-se em TM, os passos são definidos como
+"operações primitivas". Eles são definidos com métodos abstratos.
+A ConcreteClass (subclasse da classe abstrata) implementa os passos específicos do algoritmo para a subclasse.
+
+O TM é usado para os seguintes casos:
+- Vários algoritmos ou classes implementam uma lógica similar
+- A implementação de algoritmo nas subclasses ajudar a reduzir duplicação de código
+- Vários algoritmos podem ser definidos ao deixar que as subclasses implementem o comportamento usando
+o recuso de sobrescrita
+
+Ex:
+Preparando um café.
+1. ferver água
+2. passar a água pelo café
+3. colocar o café na xícara
+4. add açúcar
+5. misturar
+
+O processo para preparar um chá é similar:
+1. ferver água
+2. colocar o saquinho de chá
+3. colocar água na xícara
+4. adicionar limão
+5. misturar
+
+O processo e a fórmula são parecidos, então podemos usar o TM para representar uma abstração que reduza a quantidade
+de código que precise ser implementado para ambos os casos.
+
+Podemos criar uma classe abstrata que tem os métodos abstratos comuns. Definimos os métodos de preparo que acionarão
+a sequencia adequada de cada processo. A classe Café e Chá cuidam de definir os passos personalizados.
+Dessa forma podemos evitar a duplicação de código.
+
+
+Os principais objetivos do TM são:
+1. Definir o esqueleto do algoritmo (operações primitivas)
+2. Redefinir determinadas operações na subclasse sem alterar a estrutura do algoritmo
+3; Reutilizar código
+4. Tirar proveito de interfaces ou implementações comuns
+
+Termos usados pelo TM:
+- AbstractClass: declara a interface que define os passos dos algoritmos através de métodos abstratos que serão
+implementados pela ConcreteClass
+ConcreteClass: implementa os passos definidos pela classe abstrata
+template_method(): define o algoritmo chamando os métodos. Este é o "esqueleto do algoritmo"
+
+
+Vantagens:
+-Reduz a duplicação de código
+-Flexibilidade para a subclasse decidir o que implementar
+
+Desvantagens:
+-Se o algoritmo for complexo, pode-se haver confusão para compreender o fluxo do algoritmo
+-A manutenibilidade pode ser complexa, pois se um método de alto ou baixo nível for alterado pode causar distúrbios
+no processo

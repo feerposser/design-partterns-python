@@ -1,2 +1,18 @@
 Model View Controller
 
+O padrão MVC é o que é chamado de "padrão composto". Uma aplicação que implementa um MVC, em termos, irá implementar
+outros padrões de projeto para resolver um determinado problema. Com muita frequência as aplicações implementam
+diversos design patterns no projeto.
+
+O MVC é um padrão para implementar interfaces de usuário através de uma arquitetura que pode ser facilmente modificada
+e mantida.
+
+Model (M): É a representação dos dados e como eles são criados/persistidos, atualizados e deletados.
+View (V): Define como os dados serão apresentados.
+Controler (C): Une a implementação do model e do view.
+
+Termos do MVC:
+Modelo: classe de manipulação dos dados
+Visão: classe que constrói interfaces de usuário
+Controlador: classe que conecta a visão e o modelo
+

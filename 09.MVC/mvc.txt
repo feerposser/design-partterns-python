@@ -13,6 +13,19 @@ Controler (C): Une a implementação do model e do view.
 
 Termos do MVC:
 Modelo: classe de manipulação dos dados
-Visão: classe que constrói interfaces de usuário
+Visão: classe que constrói interfaces de usuário conforme o contexto e necessidade
 Controlador: classe que conecta a visão e o modelo
 
+Quando usar o MVC:
+- Quando é preciso mudar a apresentação de uma interface gráfica sem alterar a lógica da aplicação
+- Quando tem-se muitas views e regras de negócio que precisam ser
+- Quando  os modelos podem ser modificados sem alterar a interface de usuário (Desacoplamento)
+
+Principais objetivos do MVC:
+- Manter a manipulação dos dados e as interfaces de usuário separados
+- Facilitar a manutenção dos elementos individualmente
+- Facilitar a codificação de coom os dados são armazenados e exibidos (desacoplamento)
+
+VANTAGENS:
+- Manutenibilidade
+- Desacoplamento

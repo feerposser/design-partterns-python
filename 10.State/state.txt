@@ -1,0 +1,21 @@
+STATE - Estado
+
+O padrão state é um padrão comportamental.
+
+Pense no padrão state como uma forma de alterar o comportamento de um objeto em tempo de execução.
+POr exemplo:
+Um rádio pode captar canais AM/FM. POr padrão, quando ele está em AM, escaneará sinais de rádio AM,
+e quando alterado para FM, escaneará os sinais FM.
+
+3 principais participantes do pdrão:
+
+State - interface que encapsula o comportamento do objeto
+COncreteState - Implementa o State. É uma subclasse que irá implementar as regras de negócio do comportamento
+do State
+Context - Define a interface de interesse dos clientes. Também mantem uma instância do ConcreteState
+para definir o comportamento usado
+
+VANTAGENS:
+- Mudança de comportamento em tempo de execução sem a necessidade de regra de negócio condicional
+- Facilidade em adicionar novos comportamentos através de outras classes
+- Uso de polimorfismo
